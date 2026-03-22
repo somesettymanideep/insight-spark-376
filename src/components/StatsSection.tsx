@@ -17,6 +17,8 @@ const darkStats = [
 export default function StatsSection() {
   const { ref, isVisible } = useScrollReveal(0.15);
   const counters = stats.map((s) => useCountUp(s.end, 2000));
+  const darkCounters = darkStats.map((s) => useCountUp(s.end, 2000));
+  const { ref: darkRef, isVisible: darkVisible } = useScrollReveal(0.15);
 
   return (
     <section className="relative py-16 md:py-24 bg-background overflow-hidden">
