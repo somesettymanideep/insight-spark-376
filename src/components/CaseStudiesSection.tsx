@@ -1,9 +1,11 @@
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
-import { Factory, Globe, Bot } from "lucide-react";
+import caseManufacturing from "@/assets/case-manufacturing.jpg";
+import caseProfessional from "@/assets/case-professional-services.jpg";
+import caseGovernance from "@/assets/case-data-governance.jpg";
 
 const cases = [
   {
-    icon: Factory,
+    image: caseManufacturing,
     industry: "Manufacturing",
     tag: "AX 2012 → SAP S/4HANA",
     title: "Multi-plateau ERP transformation for a leading European bed manufacturer",
@@ -15,7 +17,7 @@ const cases = [
     ],
   },
   {
-    icon: Globe,
+    image: caseProfessional,
     industry: "Professional Services",
     tag: "D365 F&O AMS",
     title: "AMS transition for a global technology talent and digital services leader",
@@ -27,7 +29,7 @@ const cases = [
     ],
   },
   {
-    icon: Bot,
+    image: caseGovernance,
     industry: "Data Governance",
     tag: "BlueGecko · AI Governance",
     title: "Enterprise AI/Data governance architecture for a multi-system transformation",
@@ -80,16 +82,19 @@ export default function CaseStudiesSection() {
               }`}
               style={{ animationDelay: `${(i + 2) * 100}ms` }}
             >
-              {/* Icon area */}
-              <div className="bg-secondary/80 flex items-center justify-center py-10 md:py-12">
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
-                  <c.icon className="w-8 h-8 text-primary" />
-                </div>
+              {/* Image */}
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={c.image}
+                  alt={c.industry}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-card/40 to-transparent" />
               </div>
 
               {/* Content */}
               <div className="p-6 md:p-7">
-                {/* Industry + Tag */}
                 <div className="flex items-center gap-2 flex-wrap mb-3">
                   <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
                     {c.industry}
@@ -103,7 +108,6 @@ export default function CaseStudiesSection() {
                   {c.title}
                 </h3>
 
-                {/* Stats row */}
                 <div className="grid grid-cols-4 gap-3 pt-5 border-t border-border/50">
                   {c.stats.map((stat) => (
                     <div key={stat.label} className="text-center">
