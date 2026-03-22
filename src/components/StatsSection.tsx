@@ -58,7 +58,7 @@ export default function StatsSection() {
             >
               {/* Big number */}
               <div className="flex items-center gap-4 shrink-0" ref={counters[i].ref}>
-                <span className="text-4xl md:text-5xl font-bold font-heading text-foreground tabular-nums">
+                <span className="text-4xl md:text-5xl font-bold font-heading text-white tabular-nums">
                   {counters[i].count}
                   {stat.suffix}
                 </span>
@@ -66,8 +66,8 @@ export default function StatsSection() {
               </div>
 
               {/* Description */}
-              <p className="text-sm md:text-base text-muted-foreground leading-snug">
-                <span className="font-semibold text-foreground">{stat.label}</span>{" "}
+              <p className="text-sm md:text-base text-[hsl(215_15%_55%)] leading-snug">
+                <span className="font-semibold text-[hsl(215_15%_75%)]">{stat.label}</span>{" "}
                 {stat.desc}
               </p>
             </div>
