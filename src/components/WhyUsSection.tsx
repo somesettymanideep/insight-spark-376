@@ -78,7 +78,7 @@ export default function WhyUsSection() {
             return (
               <div
                 key={r.number}
-                className={`grid md:grid-cols-[auto_1fr] items-stretch gap-0 rounded-2xl border border-[hsl(215_20%_18%)] bg-[hsl(220_25%_13%)] overflow-hidden ${
+                className={`grid md:grid-cols-[auto_1fr] items-stretch gap-0 rounded-2xl border border-[hsl(215_20%_18%)] bg-[hsl(220_25%_13%)] overflow-hidden transition-all duration-300 hover:border-[hsl(215_20%_25%)] hover:shadow-[0_8px_32px_hsl(220_30%_5%/0.5)] hover:-translate-y-0.5 active:scale-[0.99] ${
                   isVisible ? "animate-reveal-up" : "opacity-0"
                 } ${isEven ? "md:direction-rtl" : ""}`}
                 style={{ animationDelay: `${150 + i * 150}ms` }}
