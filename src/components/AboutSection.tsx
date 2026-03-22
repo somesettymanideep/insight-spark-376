@@ -1,6 +1,7 @@
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { useCountUp } from "@/hooks/use-count-up";
 import hugoImg from "@/assets/hugo-cooijmans.jpg";
+import aboutBg from "@/assets/about-bg.jpg";
 
 const stats = [
   { label: "Founded in Amsterdam", value: 2022, suffix: "" },
