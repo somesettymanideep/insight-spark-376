@@ -81,6 +81,36 @@ export default function StatsSection() {
           ))}
         </div>
       </div>
+
+      {/* Dark metrics banner */}
+      <div
+        className="container mt-16"
+        ref={darkRef}
+      >
+        <div className="rounded-2xl bg-[hsl(220_50%_12%)] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-white/10 px-2 py-4">
+          {darkStats.map((stat, i) => (
+            <div
+              key={stat.note}
+              className={`flex flex-col items-center text-center px-6 py-8 ${
+                darkVisible ? "animate-reveal-up" : "opacity-0"
+              }`}
+              style={{ animationDelay: `${i * 100}ms` }}
+            >
+              <div ref={darkCounters[i].ref}>
+                <span className={`text-5xl md:text-6xl font-bold font-heading ${stat.textColor}`}>
+                  {darkCounters[i].count}{stat.suffix}
+                </span>
+              </div>
+              <p className="mt-4 text-sm text-white/80 leading-relaxed max-w-[220px]">
+                {stat.desc}
+              </p>
+              <span className="mt-3 text-xs text-white/40 tracking-wide">
+                {stat.note}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
