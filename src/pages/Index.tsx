@@ -8,6 +8,7 @@ import CaseStudiesSection from "@/components/CaseStudiesSection";
 import ProcessSection from "@/components/ProcessSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CtaSection from "@/components/CtaSection";
+import DualCtaSection from "@/components/DualCtaSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -23,6 +24,7 @@ const Index = () => {
       <ProcessSection />
       <TestimonialsSection />
       <CtaSection />
+      <DualCtaSection />
       <Footer />
     </div>
   );
