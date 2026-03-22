@@ -13,7 +13,7 @@ export default function Footer() {
       <div className="container">
         <div className="grid md:grid-cols-4 gap-10 mb-12">
           <div>
-            <img src={logo} alt="NextGenLytics" className="h-10 rounded mb-4" />
+            <img src={logo} alt="NextGenLytics" className="h-16 rounded mb-4" />
             <p className="text-sm leading-relaxed">
               AI-native data and transformation partner for mid-market enterprises.
             </p>
