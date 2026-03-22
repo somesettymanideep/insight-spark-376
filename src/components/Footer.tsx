@@ -13,7 +13,7 @@ export default function Footer() {
       <div className="container">
         <div className="grid md:grid-cols-4 gap-10 mb-12">
           <div>
-            <img src={logo} alt="NextGenLytics" className="h-10 rounded mb-4" />
+            <img src={logo} alt="NextGenLytics" className="h-16 rounded mb-4" />
             <p className="text-sm leading-relaxed">
               AI-native data and transformation partner for mid-market enterprises.
             </p>
@@ -46,23 +46,6 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Email capture */}
-        <div className="border-t border-primary-foreground/10 pt-8 pb-4 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm">Stay updated with our latest insights</p>
-          <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
-            <input
-              type="email"
-              placeholder="your@email.com"
-              className="px-4 py-2.5 rounded-full bg-primary-foreground/10 border border-primary-foreground/10 text-primary-foreground text-sm placeholder:text-primary-foreground/40 focus:outline-none focus:ring-2 focus:ring-accent/50 w-56"
-            />
-            <button
-              type="submit"
-              className="px-5 py-2.5 rounded-full bg-accent text-accent-foreground text-sm font-semibold hover:shadow-lg active:scale-95 transition-all"
-            >
-              Subscribe
-            </button>
-          </form>
-        </div>
 
         <div className="border-t border-primary-foreground/10 pt-6 text-center text-xs text-primary-foreground/40">
           © {new Date().getFullYear()} NextGenLytics. All rights reserved.
