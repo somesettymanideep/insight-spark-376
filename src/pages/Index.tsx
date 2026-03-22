@@ -17,12 +17,12 @@ const Index = () => {
     <div className="min-h-screen overflow-x-hidden">
       <Navbar />
       <HeroSection />
+      <MigrationPathSection />
       <StatsSection />
       <ServicesSection />
       <AboutSection />
       <WhyUsSection />
       <CaseStudiesSection />
-      <MigrationPathSection />
       <ProcessSection />
       <TestimonialsSection />
       <DualCtaSection />
