@@ -48,7 +48,7 @@ export default function TestimonialsSection() {
           </div>
           <div className="mt-6 flex items-center justify-between">
             <div>
-              <div className="font-semibold text-foreground">{testimonials[active].name}</div>
+              <div className="font-semibold text-accent">{testimonials[active].name}</div>
               <div className="text-sm text-muted-foreground">{testimonials[active].company}</div>
             </div>
             <div className="flex gap-2">
