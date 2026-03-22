@@ -25,16 +25,13 @@ export default function StatsSection() {
       <div className="absolute bottom-16 left-1/4 w-3.5 h-3.5 rounded-full bg-accent/10" />
       <div className="absolute bottom-24 right-20 w-2 h-2 rounded-full bg-primary/15" />
 
-      <div
-        className="container relative grid md:grid-cols-2 gap-12 md:gap-16 items-center"
-        ref={ref}
-      >
-        {/* Left – headline + description */}
-        <div className={isVisible ? "animate-reveal-up" : "opacity-0"}>
+      <div className="container relative" ref={ref}>
+        {/* Headline */}
+        <div className={`text-center max-w-2xl mx-auto mb-12 ${isVisible ? "animate-reveal-up" : "opacity-0"}`}>
           <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-[1.1] text-foreground text-balance">
             Being the best by working with the best
           </h2>
-          <p className="mt-5 text-muted-foreground leading-relaxed max-w-md text-pretty">
+          <p className="mt-5 text-muted-foreground leading-relaxed text-pretty">
             NextGenLytics is a global provider of unique end-to-end consulting
             solutions in the{" "}
             <span className="font-semibold text-primary">enterprise applications</span>,{" "}
@@ -43,30 +40,25 @@ export default function StatsSection() {
           </p>
         </div>
 
-        {/* Right – stat cards */}
-        <div className="flex flex-col gap-5">
+        {/* Stats row */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
           {stats.map((stat, i) => (
             <div
               key={stat.label}
-              className={`flex items-center gap-5 rounded-xl bg-card border border-border/60 px-6 py-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 ${
+              className={`flex flex-col items-center text-center rounded-xl bg-card border border-border/60 px-5 py-8 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 ${
                 isVisible ? "animate-reveal-up" : "opacity-0"
               }`}
               style={{ animationDelay: `${150 + i * 120}ms` }}
             >
-              {/* Big number */}
-              <div className="flex items-center gap-4 shrink-0" ref={counters[i].ref}>
+              <div className={`w-12 h-1 rounded-full mb-5 ${stat.color}`} />
+              <div ref={counters[i].ref}>
                 <span className="text-4xl md:text-5xl font-bold font-heading text-primary tabular-nums">
                   {counters[i].count}
                   {stat.suffix}
                 </span>
-                <div className={`w-1 h-10 rounded-full ${stat.color}`} />
               </div>
-
-              {/* Description */}
-              <p className="text-sm md:text-base text-muted-foreground leading-snug">
-                <span className="font-semibold text-foreground">{stat.label}</span>{" "}
-                {stat.desc}
-              </p>
+              <p className="mt-3 font-semibold text-foreground text-sm">{stat.label}</p>
+              <p className="mt-1 text-xs text-muted-foreground leading-snug">{stat.desc}</p>
             </div>
           ))}
         </div>
