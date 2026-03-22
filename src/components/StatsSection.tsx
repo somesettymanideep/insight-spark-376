@@ -2,9 +2,10 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { useCountUp } from "@/hooks/use-count-up";
 
 const stats = [
-  { end: 28, suffix: "+", label: "Years", desc: "delivering solutions for leading companies", color: "bg-accent" },
-  { end: 92, suffix: "%", label: "Customer approval", desc: "rating", color: "bg-[hsl(90_60%_45%)]" },
-  { end: 550, suffix: "+", label: "Active clients", desc: "across five continents", color: "bg-primary" },
+  { end: 70, suffix: "%", label: "Faster delivery", desc: "avg. across migration programmes", color: "bg-accent" },
+  { end: 90, suffix: "%", label: "Data accuracy", desc: "vs manual validation baseline", color: "bg-[hsl(90_60%_45%)]" },
+  { end: 40, suffix: "%", label: "Cost reduction", desc: "estimate", color: "bg-primary" },
+  { end: 6, suffix: "+", label: "Platform coverage", desc: "ERP systems supported", color: "bg-destructive" },
 ];
 
 
