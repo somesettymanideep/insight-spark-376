@@ -1,6 +1,7 @@
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { useCountUp } from "@/hooks/use-count-up";
 import hugoImg from "@/assets/hugo-cooijmans.jpg";
+import aboutBg from "@/assets/about-bg.jpg";
 
 const stats = [
   { label: "Founded in Amsterdam", value: 2022, suffix: "" },
@@ -34,8 +35,17 @@ export default function AboutSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="about" className="py-20 md:py-28 section-alt">
-      <div className="container" ref={ref}>
+    <section
+      id="about"
+      className="py-20 md:py-28 relative overflow-hidden"
+      style={{
+        backgroundImage: `url(${aboutBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="absolute inset-0 bg-background/80" />
+      <div className="container relative z-10" ref={ref}>
         {/* Two-column layout: About (8col) | Team (4col) */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-10 items-start">
 
