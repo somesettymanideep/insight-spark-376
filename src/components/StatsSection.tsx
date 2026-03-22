@@ -14,19 +14,19 @@ export default function StatsSection() {
   const counters = stats.map((s) => useCountUp(s.end, 2000));
 
   return (
-    <section className="relative py-16 md:py-24 bg-background overflow-hidden">
+    <section className="relative py-16 md:py-24 bg-[hsl(220_30%_10%)] overflow-hidden">
       {/* Decorative dots & shapes */}
-      <DotGrid className="absolute top-6 left-8 opacity-30" rows={4} cols={5} color="hsl(var(--primary))" />
-      <DotGrid className="absolute bottom-10 right-12 opacity-20" rows={3} cols={4} color="hsl(var(--accent))" />
-      <DotGrid className="absolute top-1/2 left-1/3 -translate-y-1/2 opacity-15" rows={3} cols={3} color="hsl(var(--destructive))" />
+      <DotGrid className="absolute top-6 left-8 opacity-20" rows={4} cols={5} color="hsl(215 15% 30%)" />
+      <DotGrid className="absolute bottom-10 right-12 opacity-15" rows={3} cols={4} color="hsl(215 15% 25%)" />
+      <DotGrid className="absolute top-1/2 left-1/3 -translate-y-1/2 opacity-10" rows={3} cols={3} color="hsl(215 15% 30%)" />
 
       {/* Colored shapes */}
-      <div className="absolute top-10 right-1/4 w-3 h-3 rounded-full bg-accent/40" />
-      <div className="absolute top-20 left-16 w-2.5 h-2.5 rounded-sm bg-primary/30 rotate-45" />
-      <div className="absolute bottom-16 left-1/4 w-3.5 h-3.5 rounded-full bg-destructive/25" />
-      <div className="absolute bottom-24 right-20 w-2 h-2 rounded-full bg-primary/35" />
-      <div className="absolute top-1/3 right-10 w-2.5 h-2.5 rounded-sm bg-accent/30 rotate-12" />
-      <div className="absolute bottom-8 left-12 w-2 h-2 rounded-sm bg-[hsl(90_60%_45%/0.35)] rotate-45" />
+      <div className="absolute top-10 right-1/4 w-3 h-3 rounded-full bg-accent/20" />
+      <div className="absolute top-20 left-16 w-2.5 h-2.5 rounded-sm bg-[hsl(160_60%_45%/0.2)] rotate-45" />
+      <div className="absolute bottom-16 left-1/4 w-3.5 h-3.5 rounded-full bg-accent/15" />
+      <div className="absolute bottom-24 right-20 w-2 h-2 rounded-full bg-[hsl(160_60%_45%/0.25)]" />
+      <div className="absolute top-1/3 right-10 w-2.5 h-2.5 rounded-sm bg-accent/15 rotate-12" />
+      <div className="absolute bottom-8 left-12 w-2 h-2 rounded-sm bg-[hsl(160_60%_45%/0.2)] rotate-45" />
 
       <div
         className="container relative grid md:grid-cols-2 gap-12 md:gap-16 items-center"
@@ -34,15 +34,15 @@ export default function StatsSection() {
       >
         {/* Left – headline + description */}
         <div className={isVisible ? "animate-reveal-up" : "opacity-0"}>
-          <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-[1.1] text-foreground text-balance">
+          <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-[1.1] text-white text-balance">
             Being the best by working with the best
           </h2>
-          <p className="mt-5 text-muted-foreground leading-relaxed max-w-md text-pretty">
+          <p className="mt-5 text-[hsl(215_15%_60%)] leading-relaxed max-w-md text-pretty">
             NextGenLytics is a global provider of unique end-to-end consulting
             solutions in the{" "}
-            <span className="font-semibold text-primary">enterprise applications</span>,{" "}
-            <span className="font-semibold text-primary">AI</span>, and{" "}
-            <span className="font-semibold text-primary">cloud</span> space.
+            <span className="font-semibold text-accent">enterprise applications</span>,{" "}
+            <span className="font-semibold text-accent">AI</span>, and{" "}
+            <span className="font-semibold text-accent">cloud</span> space.
           </p>
         </div>
 
@@ -51,14 +51,14 @@ export default function StatsSection() {
           {stats.map((stat, i) => (
             <div
               key={stat.label}
-              className={`flex items-center gap-5 rounded-xl bg-card border border-border/50 shadow-sm px-6 py-5 ${
+              className={`flex items-center gap-5 rounded-xl bg-[hsl(220_25%_13%)] border border-[hsl(215_20%_18%)] px-6 py-5 ${
                 isVisible ? "animate-reveal-up" : "opacity-0"
               }`}
               style={{ animationDelay: `${150 + i * 120}ms` }}
             >
               {/* Big number */}
               <div className="flex items-center gap-4 shrink-0" ref={counters[i].ref}>
-                <span className="text-4xl md:text-5xl font-bold font-heading text-foreground tabular-nums">
+                <span className="text-4xl md:text-5xl font-bold font-heading text-white tabular-nums">
                   {counters[i].count}
                   {stat.suffix}
                 </span>
@@ -66,8 +66,8 @@ export default function StatsSection() {
               </div>
 
               {/* Description */}
-              <p className="text-sm md:text-base text-muted-foreground leading-snug">
-                <span className="font-semibold text-foreground">{stat.label}</span>{" "}
+              <p className="text-sm md:text-base text-[hsl(215_15%_55%)] leading-snug">
+                <span className="font-semibold text-[hsl(215_15%_75%)]">{stat.label}</span>{" "}
                 {stat.desc}
               </p>
             </div>
