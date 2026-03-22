@@ -11,6 +11,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import CtaSection from "@/components/CtaSection";
 import DualCtaSection from "@/components/DualCtaSection";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const Index = () => {
   return (
@@ -27,6 +28,7 @@ const Index = () => {
       <TestimonialsSection />
       <DualCtaSection />
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };
