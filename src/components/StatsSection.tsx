@@ -51,7 +51,7 @@ export default function StatsSection() {
           {stats.map((stat, i) => (
             <div
               key={stat.label}
-              className={`flex items-center gap-5 rounded-xl bg-card border border-border/50 shadow-sm px-6 py-5 ${
+              className={`flex items-center gap-5 rounded-xl bg-[hsl(220_25%_13%)] border border-[hsl(215_20%_18%)] px-6 py-5 ${
                 isVisible ? "animate-reveal-up" : "opacity-0"
               }`}
               style={{ animationDelay: `${150 + i * 120}ms` }}
