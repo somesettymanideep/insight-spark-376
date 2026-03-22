@@ -7,18 +7,10 @@ const stats = [
   { end: 550, suffix: "+", label: "Active clients", desc: "across five continents", color: "bg-primary" },
 ];
 
-const darkStats = [
-  { end: 70, suffix: "%", desc: "Faster data migration delivery timelines with BlueGecko automation", note: "avg. across migration programmes", textColor: "text-primary" },
-  { end: 90, suffix: "%", desc: "Automated data quality checks before go-live — Owl Sight module", note: "vs manual validation baseline", textColor: "text-[hsl(165_70%_42%)]" },
-  { end: 40, suffix: "%", desc: "Lower operational costs through AI reusability and template standardisation", note: "cost reduction estimate", textColor: "text-accent" },
-  { end: 6, suffix: "+", desc: "ERP source systems supported — SAP, D365, Infor, Oracle, Odoo, AS/400", note: "platform coverage", textColor: "text-accent" },
-];
 
 export default function StatsSection() {
   const { ref, isVisible } = useScrollReveal(0.15);
   const counters = stats.map((s) => useCountUp(s.end, 2000));
-  const darkCounters = darkStats.map((s) => useCountUp(s.end, 2000));
-  const { ref: darkRef, isVisible: darkVisible } = useScrollReveal(0.15);
 
   return (
     <section className="relative py-16 md:py-24 bg-background overflow-hidden">
