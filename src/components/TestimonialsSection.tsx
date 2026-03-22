@@ -54,15 +54,15 @@ export default function TestimonialsSection() {
             <div className="flex gap-2">
               <button
                 onClick={() => setActive((p) => (p - 1 + testimonials.length) % testimonials.length)}
-                className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-muted active:scale-95 transition-all"
+                className="w-10 h-10 rounded-full bg-primary flex items-center justify-center hover:bg-primary/90 active:scale-95 transition-all"
               >
-                <ChevronLeft className="w-5 h-5" />
+                <ChevronLeft className="w-5 h-5 text-primary-foreground" />
               </button>
               <button
                 onClick={() => setActive((p) => (p + 1) % testimonials.length)}
-                className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-muted active:scale-95 transition-all"
+                className="w-10 h-10 rounded-full bg-primary flex items-center justify-center hover:bg-primary/90 active:scale-95 transition-all"
               >
-                <ChevronRight className="w-5 h-5" />
+                <ChevronRight className="w-5 h-5 text-primary-foreground" />
               </button>
             </div>
           </div>
