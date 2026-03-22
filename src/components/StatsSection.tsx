@@ -34,15 +34,15 @@ export default function StatsSection() {
       >
         {/* Left – headline + description */}
         <div className={isVisible ? "animate-reveal-up" : "opacity-0"}>
-          <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-[1.1] text-foreground text-balance">
+          <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-[1.1] text-white text-balance">
             Being the best by working with the best
           </h2>
-          <p className="mt-5 text-muted-foreground leading-relaxed max-w-md text-pretty">
+          <p className="mt-5 text-[hsl(215_15%_60%)] leading-relaxed max-w-md text-pretty">
             NextGenLytics is a global provider of unique end-to-end consulting
             solutions in the{" "}
-            <span className="font-semibold text-primary">enterprise applications</span>,{" "}
-            <span className="font-semibold text-primary">AI</span>, and{" "}
-            <span className="font-semibold text-primary">cloud</span> space.
+            <span className="font-semibold text-accent">enterprise applications</span>,{" "}
+            <span className="font-semibold text-accent">AI</span>, and{" "}
+            <span className="font-semibold text-accent">cloud</span> space.
           </p>
         </div>
 
