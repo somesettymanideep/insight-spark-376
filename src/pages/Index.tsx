@@ -24,6 +24,7 @@ const Index = () => {
       <ProcessSection />
       <TestimonialsSection />
       <CtaSection />
+      <DualCtaSection />
       <Footer />
     </div>
   );
