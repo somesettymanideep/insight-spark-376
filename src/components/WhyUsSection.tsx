@@ -53,67 +53,83 @@ export default function WhyUsSection() {
   return (
     <section id="why-us" className="py-20 md:py-28 bg-[hsl(220_30%_10%)]">
       <div className="container" ref={ref}>
-        {/* Header */}
+        {/* Section header */}
         <div
-          className={`max-w-3xl mb-12 md:mb-16 ${
+          className={`text-center max-w-3xl mx-auto mb-16 md:mb-20 ${
             isVisible ? "animate-reveal-up" : "opacity-0"
           }`}
         >
+          <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-4 font-heading">
+            Why NextGenLytics
+          </span>
           <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-[1.08] text-white text-balance font-heading">
             Three reasons companies choose us for ERP migrations.
           </h2>
-          <p className="mt-5 text-[hsl(215_15%_60%)] leading-relaxed max-w-2xl text-pretty">
+          <p className="mt-5 text-[hsl(215_15%_60%)] leading-relaxed max-w-2xl mx-auto text-pretty">
             Not claims. Structural realities that translate into faster
             delivery, lower cost, and less risk on your programme — every time.
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-5 md:gap-6">
-          {reasons.map((r, i) => (
-            <div
-              key={r.number}
-              className={`rounded-2xl border border-[hsl(215_20%_18%)] bg-[hsl(220_25%_13%)] p-7 md:p-8 flex flex-col ${
-                isVisible ? "animate-reveal-up" : "opacity-0"
-              }`}
-              style={{ animationDelay: `${150 + i * 120}ms` }}
-            >
-              {/* Tag */}
-              <p className="text-xs font-semibold tracking-widest text-[hsl(160_60%_45%)] mb-6 font-heading">
-                {r.number} — {r.label}
-              </p>
-
-              {/* Big stat */}
-              <p
-                className={`text-4xl md:text-5xl font-bold font-heading leading-none ${r.statColor}`}
+        {/* Staggered card layout */}
+        <div className="space-y-6">
+          {reasons.map((r, i) => {
+            const isEven = i % 2 === 1;
+            return (
+              <div
+                key={r.number}
+                className={`grid md:grid-cols-[auto_1fr] items-stretch gap-0 rounded-2xl border border-[hsl(215_20%_18%)] bg-[hsl(220_25%_13%)] overflow-hidden ${
+                  isVisible ? "animate-reveal-up" : "opacity-0"
+                } ${isEven ? "md:direction-rtl" : ""}`}
+                style={{ animationDelay: `${150 + i * 150}ms` }}
               >
-                {r.stat}
-              </p>
-              <p className="text-sm text-[hsl(215_15%_50%)] mt-2 mb-7">
-                {r.substat}
-              </p>
+                {/* Stat side */}
+                <div
+                  className={`flex flex-col justify-center p-7 md:p-10 md:w-72 lg:w-80 border-b md:border-b-0 ${
+                    isEven
+                      ? "md:border-l border-[hsl(215_20%_18%)] md:order-2"
+                      : "md:border-r border-[hsl(215_20%_18%)]"
+                  }`}
+                  style={{ direction: "ltr" }}
+                >
+                  <p className="text-xs font-semibold tracking-widest text-[hsl(160_60%_45%)] mb-5 font-heading">
+                    {r.number} — {r.label}
+                  </p>
+                  <p
+                    className={`text-5xl md:text-6xl font-bold font-heading leading-none ${r.statColor}`}
+                  >
+                    {r.stat}
+                  </p>
+                  <p className="text-sm text-[hsl(215_15%_50%)] mt-2">
+                    {r.substat}
+                  </p>
+                </div>
 
-              {/* Headline */}
-              <h3 className="text-base font-bold text-white leading-snug mb-3">
-                {r.headline}
-              </h3>
-
-              {/* Body */}
-              <p className="text-sm text-[hsl(215_15%_55%)] leading-relaxed mb-6 text-pretty">
-                {r.body}
-              </p>
-
-              {/* Bullets */}
-              <ul className="mt-auto space-y-2.5">
-                {r.bullets.map((b) => (
-                  <li key={b} className="flex items-start gap-2.5 text-sm">
-                    <Check className="w-4 h-4 text-[hsl(160_60%_45%)] shrink-0 mt-0.5" />
-                    <span className="text-[hsl(215_15%_70%)]">{b}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+                {/* Content side */}
+                <div
+                  className={`p-7 md:p-10 flex flex-col justify-center ${
+                    isEven ? "md:order-1" : ""
+                  }`}
+                  style={{ direction: "ltr" }}
+                >
+                  <h3 className="text-lg md:text-xl font-bold text-white leading-snug mb-3">
+                    {r.headline}
+                  </h3>
+                  <p className="text-sm text-[hsl(215_15%_55%)] leading-relaxed mb-6 max-w-xl text-pretty">
+                    {r.body}
+                  </p>
+                  <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2.5">
+                    {r.bullets.map((b) => (
+                      <li key={b} className="flex items-start gap-2.5 text-sm">
+                        <Check className="w-4 h-4 text-[hsl(160_60%_45%)] shrink-0 mt-0.5" />
+                        <span className="text-[hsl(215_15%_70%)]">{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
