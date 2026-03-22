@@ -14,19 +14,19 @@ export default function StatsSection() {
   const counters = stats.map((s) => useCountUp(s.end, 2000));
 
   return (
-    <section className="relative py-16 md:py-24 bg-background overflow-hidden">
+    <section className="relative py-16 md:py-24 bg-[hsl(220_30%_10%)] overflow-hidden">
       {/* Decorative dots & shapes */}
-      <DotGrid className="absolute top-6 left-8 opacity-30" rows={4} cols={5} color="hsl(var(--primary))" />
-      <DotGrid className="absolute bottom-10 right-12 opacity-20" rows={3} cols={4} color="hsl(var(--accent))" />
-      <DotGrid className="absolute top-1/2 left-1/3 -translate-y-1/2 opacity-15" rows={3} cols={3} color="hsl(var(--destructive))" />
+      <DotGrid className="absolute top-6 left-8 opacity-20" rows={4} cols={5} color="hsl(215 15% 30%)" />
+      <DotGrid className="absolute bottom-10 right-12 opacity-15" rows={3} cols={4} color="hsl(215 15% 25%)" />
+      <DotGrid className="absolute top-1/2 left-1/3 -translate-y-1/2 opacity-10" rows={3} cols={3} color="hsl(215 15% 30%)" />
 
       {/* Colored shapes */}
-      <div className="absolute top-10 right-1/4 w-3 h-3 rounded-full bg-accent/40" />
-      <div className="absolute top-20 left-16 w-2.5 h-2.5 rounded-sm bg-primary/30 rotate-45" />
-      <div className="absolute bottom-16 left-1/4 w-3.5 h-3.5 rounded-full bg-destructive/25" />
-      <div className="absolute bottom-24 right-20 w-2 h-2 rounded-full bg-primary/35" />
-      <div className="absolute top-1/3 right-10 w-2.5 h-2.5 rounded-sm bg-accent/30 rotate-12" />
-      <div className="absolute bottom-8 left-12 w-2 h-2 rounded-sm bg-[hsl(90_60%_45%/0.35)] rotate-45" />
+      <div className="absolute top-10 right-1/4 w-3 h-3 rounded-full bg-accent/20" />
+      <div className="absolute top-20 left-16 w-2.5 h-2.5 rounded-sm bg-[hsl(160_60%_45%/0.2)] rotate-45" />
+      <div className="absolute bottom-16 left-1/4 w-3.5 h-3.5 rounded-full bg-accent/15" />
+      <div className="absolute bottom-24 right-20 w-2 h-2 rounded-full bg-[hsl(160_60%_45%/0.25)]" />
+      <div className="absolute top-1/3 right-10 w-2.5 h-2.5 rounded-sm bg-accent/15 rotate-12" />
+      <div className="absolute bottom-8 left-12 w-2 h-2 rounded-sm bg-[hsl(160_60%_45%/0.2)] rotate-45" />
 
       <div
         className="container relative grid md:grid-cols-2 gap-12 md:gap-16 items-center"
