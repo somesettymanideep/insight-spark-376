@@ -4,7 +4,7 @@ export default function DualCtaSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section className="py-16 md:py-24 bg-foreground">
+    <section className="py-16 md:py-24 bg-muted">
       <div className="container grid md:grid-cols-2 gap-6 md:gap-8" ref={ref}>
         {/* Left card – BlueGecko assessment */}
         <div
