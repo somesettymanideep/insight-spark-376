@@ -66,7 +66,7 @@ export default function VideoShowcaseSection() {
             playsInline
             preload="metadata"
           >
-            <source src="/videos/bluegecko-overview.mp4" type="video/mp4" />
+            <source src={`${import.meta.env.BASE_URL}videos/bluegecko-overview.mp4`} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
