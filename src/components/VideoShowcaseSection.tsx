@@ -44,7 +44,6 @@ export default function VideoShowcaseSection() {
             ref={videoRef}
             className="w-full aspect-video bg-black"
             controls
-            muted
             playsInline
             preload="metadata"
           >
