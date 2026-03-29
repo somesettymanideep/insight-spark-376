@@ -1,7 +1,28 @@
+import { useEffect, useRef } from "react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 export default function VideoShowcaseSection() {
   const { ref, isVisible } = useScrollReveal();
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section className="py-20 md:py-28 bg-background">
@@ -38,10 +59,12 @@ export default function VideoShowcaseSection() {
           }`}
         >
           <video
+            ref={videoRef}
             className="w-full aspect-video bg-black"
             controls
+            muted
+            playsInline
             preload="metadata"
-            poster=""
           >
             <source src="/videos/bluegecko-overview.mp4" type="video/mp4" />
             Your browser does not support the video tag.
