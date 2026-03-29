@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 export default function VideoShowcaseSection() {
